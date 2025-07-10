@@ -1,4 +1,4 @@
-
+<!-- Full working HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,36 +7,79 @@
   <title>XanaX Spyware V4</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      width: 0px;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background: #0d0d0d;
       color: #e74c3c;
       font-family: 'Orbitron', sans-serif;
+
     }
+
     header {
       background: #1a1a1a;
       padding: 1.5rem 2rem;
       box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
       display: flex;
       align-items: center;
+      justify-content: center;
     }
+
     header img {
-      height: 90px;
+      height: 80px;
       margin-right: 1rem;
     }
+
     header h1 {
       margin: 0;
       font-size: 3rem;
       color: #ff4444;
       text-shadow: 0 0 20px #ff1a1a;
     }
+
     .content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem;
+      max-width: 1080px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: #1a1a1a;
+      border: 1px solid #e74c3c;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: #e74c3c;
+      color: #fff;
+    }
+
     .section {
       background: #111;
       border-left: 6px solid #e74c3c;
@@ -44,16 +87,24 @@
       padding: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 0 10px #ff000044;
+      display: none;
     }
+
+    .section.active {
+      display: block;
+    }
+
     .section h2 {
       margin-top: 0;
       color: #ff4444;
     }
+
     .commands {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
+
     .commands h3 {
       color: #fff;
       font-size: 1.2rem;
@@ -61,11 +112,13 @@
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
     }
+
     .commands ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .commands li {
       background: #1a1a1a;
       padding: 0.5rem 1rem;
@@ -77,10 +130,13 @@
       font-size: 0.95rem;
       cursor: pointer;
       position: relative;
+      transition: background 0.3s;
     }
+
     .commands li:hover {
       background-color: #2c2c2c;
     }
+
     .description {
       max-height: 0;
       overflow: hidden;
@@ -93,14 +149,17 @@
       border-radius: 0 0 4px 4px;
       transition: max-height 0.3s ease, padding 0.3s ease;
     }
+
     .description.open {
-      max-height: 100px;
+      max-height: 120px;
       padding: 0.5rem;
     }
+
     .button-container {
       text-align: center;
       margin-top: 3rem;
     }
+
     .button {
       padding: 12px 30px;
       background: #e74c3c;
@@ -112,41 +171,54 @@
       box-shadow: 0 0 12px #ff1a1a;
       transition: all 0.3s ease;
     }
+
     .button:hover {
       background: #ff0000;
       box-shadow: 0 0 20px #ff0000;
     }
+
     .note {
       margin-top: 1rem;
       color: #ccc;
       font-size: 0.9rem;
     }
+
+    .changelog ul {
+      padding-left: 1rem;
+    }
+
+    .changelog li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #eee;
+    }
+
+    .changelog strong {
+      color: #e74c3c;
+    }
   </style>
 </head>
 <body>
   <header>
-  <div style="flex: 1;">
-    <img src="icon.png" alt="Logo">
-  </div>
-  <div style="flex: 2; text-align: center;">
+    <img src="icon.png" alt="Logo" />
     <h1>XanaX Spyware V4</h1>
-  </div>
-  <div style="flex: 1;"></div>
-</header>
-
+  </header>
 
   <div class="content">
-    <div class="section">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('commands')">Commands</button>
+      <button class="tab-btn" onclick="showTab('changelog')">Changelog</button>
+    </div>
+
+    <!-- COMMANDS SECTION -->
+    <div class="section active" id="commands">
       <h2>⚠️ Disclaimer</h2>
       <p>
         This tool is intended strictly for use within controlled virtual environments. It is designed for ethical, educational, and research purposes only. Any misuse, including unauthorized access or deployment in real-world systems, is strongly discouraged and may be illegal. Always obtain proper permission before using this tool.
       </p>
-    </div>
-
-    <div class="section">
-      <h2>🧠 Commands</h2>
+      <h2>Commands</h2>
       <div class="commands">
-        <div>
+<div>
 <h3>🖥️ System Info</h3>
 <ul>
 <li onclick="toggleDesc(this)">
@@ -340,8 +412,67 @@
       </div>
     </div>
 
+    <!-- CHANGELOG SECTION -->
+    <div class="section" id="changelog">
+      <h2>Changelog</h2>
+      <div class="changelog">
+        <ul>
+  <li><strong>[v4.0]</strong> - Massive internal refactor</li>
+  <ul>
+    <li>🔒 Reworked internal structure for modularity</li>
+    <li>🧠 Heavily improved anti-VM and sandbox evasion</li>
+    <li>🧪 Better compatibility with Windows 11</li>
+    <li>💡 Optimized payload injection performance</li>
+  </ul>
+
+  <li><strong>[v3.9]</strong> - Recon & Stealer Improvements</li>
+  <ul>
+    <li>🎯 Reimplemented Discord token stealer</li>
+    <li>🛡️ Improved anti-VM heuristics </li>
+    <li>🧭 Refined !location and !ipinfo accuracy</li>
+  </ul>
+
+  <li><strong>[v3.8]</strong> - Big Command Drop</li>
+  <ul>
+    <li>🧨 Added 20+ new commands (including !screenvideo, !kill, !record and more)</li>
+    <li>🎥 Improved webcam snapshot and video recorder</li>
+    <li>🗂️ Added full directory compression with !getfolder</li>
+  </ul>
+
+  <li><strong>[v3.5 - v3.7]</strong> - Core Features & UI Refresh</li>
+  <ul>
+    <li>📸 Screenshot module stabilized</li>
+    <li>🖼️ Added dynamic wallpaper changer (!wallpaper)</li>
+    <li>🧪 Minor bugfixes and stealth optimizations</li>
+    <li>🎨 Redesigned Output using Discord Embeds</li>
+  </ul>
+
+  <li><strong>[v2.3]</strong> - Performance & Persistence</li>
+  <ul>
+    <li>⚙️ Improved overall execution speed</li>
+    <li>🧬 Better process persistence and error recovery</li>
+    <li>🗂️ File manager: faster !upload and !run execution</li>
+  </ul>
+
+  <li><strong>[v2.0]</strong> - Stability Update</li>
+  <ul>
+    <li>🔁 Categorized Commands into Categories</li>
+    <li>📦 Improved download & self-delete </li>
+    <li>📊 Added !botinfo and !ping</li>
+  </ul>
+
+  <li><strong>[v1.0]</strong> - Initial Release</li>
+  <ul>
+    <li>🧠 Core functions: !info, !getfile, !cmd, !shutdown</li>
+    <li>📦 First upload/download logic with basic stub</li>
+    <li>💬 Basic interaction features (!message, !quit)</li>
+  </ul>
+</ul>
+      </div>
+    </div>
+
     <div class="button-container">
-      <button class="button" disabled>🔻 Download</button>
+      <button class="button" disabled>Download</button>
       <div class="note">Download currently disabled</div>
     </div>
   </div>
@@ -350,6 +481,13 @@
     function toggleDesc(item) {
       const desc = item.querySelector('.description');
       desc.classList.toggle('open');
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
     }
   </script>
 </body>
