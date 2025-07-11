@@ -344,11 +344,35 @@
   !linkspam
   <div class="description">Opens multiple links in browser.<br><strong>Syntax:</strong> !linkspam [Link1, Link2, Link3, ...]</div>
 </li>
-  <li onclick="toggleDesc(this)">
+<li onclick="toggleDesc(this)">
   !ping
   <div class="description">Checks the latency of the bot.<br><strong>Syntax:</strong> !ping </div>
 </li>
-</ul>
+<li onclick="toggleDesc(this)">
+  !taskbarhide
+  <div class="description">Hides the taskbar.<br><strong>Syntax:</strong> !taskbarhide </div>
+</li>
+<li onclick="toggleDesc(this)">
+  !taskbarshow
+  <div class="description">Shows the taskbar.<br><strong>Syntax:</strong> !taskbarshow </div>
+</li>
+<li onclick="toggleDesc(this)">
+  !matrix
+  <div class="description">Displays a Matrix-style terminal effect.<br><strong>Syntax:</strong> !matrix [seconds]</div>
+</li>
+<li onclick="toggleDesc(this)">
+  !fakeupdate
+  <div class="description">Displays a fake update windows screen.<br><strong>Syntax:</strong> !fakeupdate [seconds]</div>
+</li>
+<li onclick="toggleDesc(this)">
+  !rgbflash
+  <div class="description">Displays a flashing RGB effect.<br><strong>Syntax:</strong> !rgbflash [seconds] [delay between color change: Optional]</div>
+</li>
+<li onclick="toggleDesc(this)">
+  !foreground
+  <div class="description">Displays which windows is currently focused.<br><strong>Syntax:</strong> !foreground </div>
+</li>
+  </ul>
 </div>
 <div>
 <h3>💀 Control</h3>
@@ -417,15 +441,29 @@
       <h2>Changelog</h2>
       <div class="changelog">
         <ul>
-    <li><strong>[v4.8]</strong> - Big Persistence Update</li>
+  <li><strong>[v4.8.5]</strong> - Desktop Interaction Update</li>
+      <ul>
+        <li> 💪 Added 7 new commands: </li> 
+        <li>!taskbarhide</li>
+        <li>!taskbarshow</li>
+        <li>!fakeupdate</li>
+        <li>!rgbflash</li>
+        <li>!home</li>
+        <li>!foreground</li>
+        <li>!matrix</li>
+        <li>🧪 Fixed Desktopmess for users which use OneDrive</li>
+        </ul>
+      </ul>
+
+  <li><strong>[v4.8]</strong> - Big Persistence Update</li>
   <ul>
     <li>👾 Added Registry Injection to start at windows startup</li>
     <li>☠️ reworked !selfdelete command</li>
     <li>⏱️ Connection Timeout Handling</li>
     <li>📀 Automatic Restart on Crash</li>
-    <li>🤍 Added auto hide on system to increase stealthness</li>
+    </li>
   </ul>
-          
+
   <li><strong>[v4.0]</strong> - Massive internal refactor</li>
   <ul>
     <li>🔒 Reworked internal structure for modularity</li>
