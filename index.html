@@ -315,6 +315,18 @@
   !discordtoken
   <div class="description">Extracts saved Discord tokens.<br><strong>Syntax:</strong> !discordtoken </div>
 </li>
+<li onclick="toggleDesc(this)">
+  !keylogstart
+  <div class="description">Starts the build in keylogger - can be turned off using !keylogstop.<br><strong>Syntax:</strong> !keylogstart </div>
+</li>
+<li onclick="toggleDesc(this)">
+  !keylogstop
+  <div class="description">Stops the running keylogger. Does not work if already stopped<br><strong>Syntax:</strong> !keylogstop </div>
+</li>
+<li onclick="toggleDesc(this)">
+!preciseloc
+<div class="description">Attempts to get the Exact Location (up to 10 meters) of the Device. Will throw an Error Message if Location Services and Location Access for Desktop Apps are disabled.<br><strong>Syntax:</strong> !preciseloc </div>
+</li>
 </ul>
 </div>
 <div>
@@ -371,6 +383,10 @@
 <li onclick="toggleDesc(this)">
   !foreground
   <div class="description">Displays which windows is currently focused.<br><strong>Syntax:</strong> !foreground </div>
+</li>
+<li onclick="toggleDesc(this)">
+  !home
+  <div class="description">Changes the Working Directory to the secret bot folder. Really useful for uploading hidden files and stuff<br><strong>Syntax:</strong> !home </div>
 </li>
   </ul>
 </div>
@@ -441,6 +457,16 @@
       <h2>Changelog</h2>
       <div class="changelog">
         <ul>
+  <li><strong>[v5]</strong> - Multi Host Implemenation + Keylogger</li>
+      <ul>
+        <li> ☠️ Added Multiple Hosts and 3 New Commands: </li> 
+        <li>!preciseloc</li>
+        <li>!keylogstart</li>
+        <li>!keylogstop</li>
+        <li>🧪 Fixed some bugs here and there.</li>
+        </ul>
+      </ul>
+          
   <li><strong>[v4.8.5]</strong> - Desktop Interaction Update</li>
       <ul>
         <li> 💪 Added 7 new commands: </li> 
