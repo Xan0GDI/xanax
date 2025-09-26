@@ -61,7 +61,8 @@ const helpDict = {
   "key": { "explanation": "See the command `!keyhelp`", "category": "Utility" },
   "keystop": { "explanation": "Attempts to stop the current key queue.", "category": "Utility" },
   "msg": { "explanation": "Displays a message on the targets screen.", "category": "Utility" },
-  "keyhelp": { "explanation": "Sends a help command for the `!key` module.", "category": "Utility" }
+  "keyhelp": { "explanation": "Sends a help command for the `!key` module.", "category": "Utility" },
+  "addstartup": { "explanation": "Adds a given file to startup registry.", "category": "Utility" },
 };
 
 /* ======= Changelog (multi-line, English) ======= */
