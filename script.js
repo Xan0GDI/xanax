@@ -67,6 +67,11 @@ const helpDict = {
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+  { v: "v8.1", note: [
+    "Added !addstartup",
+    "Allows us to add all kinds of files to the startup registry",
+    ].join("\n")
+  },
   { v: "v8", note: [
       "!keyhelp",
       "!volume (1–100)",
