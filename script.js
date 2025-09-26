@@ -71,7 +71,7 @@ const helpDict = {
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
-  { v: "v8.3", note: [
+  { v: "v8.4", note: [
     "Added !enableloc",
     "Enables Location Services",
     "Added !disableloc",
