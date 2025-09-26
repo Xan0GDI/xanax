@@ -44,7 +44,6 @@ const helpDict = {
   "location": { "explanation": "Tries to get the physical location of the target device.", "category": "System Info" },
   "admin": { "explanation": "Checks if the bot is running with administrator privileges.", "category": "Utility" },
   "defenderstate": { "explanation": "Checks if Real-time protection is enabled.", "category": "Utility" },
-  "hidetask": { "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nHides the bot process from the Task Manager and other process viewers.", "category": "Stealth" },
   "excludewindef": { "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAdds the bot's directory to Windows Defender's exclusion list.", "category": "Stealth" },
   "requireadmin": { "explanation": "Restarts the bot with administrator privileges using a UAC prompt.", "category": "Utility" },
   "disabledefender": { "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAttempts to disable Windows Defender real-time protection.", "category": "Utility" },
@@ -69,6 +68,11 @@ const helpDict = {
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+    { v: "v8.3", note: [
+    "Added !hidetask",
+    "Due to high detection rates from Windows Defender",
+    ].join("\n")
+  },
   { v: "v8.2", note: [
     "Added !system",
     "Checks if we are running with System Permissions (NT AUTHORITY SYSTEM)",
