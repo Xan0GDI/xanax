@@ -69,7 +69,7 @@ const helpDict = {
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
     { v: "v8.3", note: [
-    "Added !hidetask",
+    "Removed !hidetask",
     "Due to high detection rates from Windows Defender",
     ].join("\n")
   },
