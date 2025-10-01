@@ -248,6 +248,11 @@ const helpDict = {
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+    { v: "v9.2", note: [
+    "Switched from PyInstaller to Nuitka",
+    "Less Detections, faster runtime, less possibility to debug and analyze >:D",
+    ].join("\n")
+  },
   { v: "v9", note: [
     "BIG UPDATE",
     "Removed commands that caused issues.",
