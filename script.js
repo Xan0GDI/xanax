@@ -239,7 +239,11 @@ const helpDict = {
   "addstartup": {
       "explanation": "Adds a given file to startup registry.",
       "category": "Utility"
-  }
+  },
+  "enableloc": {
+      "explanation": "Enables Location Services on the Target Device.",
+      "category": "Utility"
+  },
 };
 
 /* ======= Changelog (multi-line, English) ======= */
